@@ -34,9 +34,9 @@
 - CameraClientRTC：カメラ映像をRSNP通信によってサーバに送信するRTC．CameraImage型を受信する。
 - URGRTC：LRF距離データを取得するRTC．RangeData型で出力する．
 - UrgControllerRTC：LRF距離データを間引きするRTC．RangeData型で受信・出力を行う．
-- RobotClient_ver2RTC：ゲームパッドのジョイスティック入力量およびボタン入力を，RSNP通信によりサーバから取得するRTC．ジョイスティック入力量はTimedVelocity2D型で出力し、ボタン入力はTimedLongSeq型で出力する．
+- RobotClient_ver2RTC：ゲームパッドのジョイスティック入力量およびボタン入力を，RSNP通信によりサーバから取得するRTC．  ジョイスティック入力量はTimedVelocity2D型で出力し、ボタン入力はTimedLongSeq型で出力する．
 - RTC_iWs09RTC：移動ロボットの動作とPSD距離データの取得を行うRTC．移動量はTimedVelocity2D型を受信し，PSDセンサはTimedLongSeq型で出力する．
-- GamePad_ver2RTC：動作確認時にゲームパッドのジョイスティック入力量およびボタン入力量を送信するRTC．ジョイスティック入力量はTimedVelocity2D型で出力し、ボタン入力はTimedLongSeq型で出力する．
+- GamePad_ver2RTC：動作確認時にゲームパッドのジョイスティック入力量およびボタン入力量を送信するRTC．  ジョイスティック入力量はTimedVelocity2D型で出力し、ボタン入力はTimedLongSeq型で出力する．
 ****
 RTMコンテスト2021  
 芝浦工業大学 機械機能工学科 知能機械システム研究室  
