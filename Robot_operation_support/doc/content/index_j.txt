@@ -1,0 +1,138 @@
+Robot_operation_support - 日本語
+=======================
+
+
+はじめに
+========
+
+クラスについては、 `APIドキュメンテーション`_ に参照してください。
+
+.. _`APIドキュメンテーション`:
+   doxygen/html/index.html
+
+条件
+====
+
+Robot_operation_supportはOpenRTM-aist 1.0.0以上のC++版が必要です。
+
+Robot_operation_supportは CMake_ を使います。CMake 2.8以上が必要です。
+
+.. _CMAke:
+   http://www.cmake.org
+
+インストール
+============
+
+インストーラ
+------------
+
+Windowsのユーザはインストーラパッケージを使用してコンポーネントをインストール
+することができます。これはコンポーネント及びそのすべての必要なライブラリを
+インストールします。Windowsでインストールする場合、インストーラの使用を推奨してます。
+
+- インストーラをダウンロードしてください。
+- インストールを始めるためにインストーラをダブルクリックしてください。
+- 指示にしたがってコンポーネントをインストールしてください。
+- 環境変数の変更を適用するため、コンポーネントを使用する前にコンピューターを
+  再起動する必要があるかもしれません。
+
+Robot_operation_supportは ``Robot_operation_supportComp`` の実行をダブルクリックして実行することが
+できます。あるいは、 ``Robot_operation_support`` を初期化関数の ``Robot_operation_supportInit`` を利用して、
+マネージャにロードすることができます。
+
+ソースから
+----------
+
+ソースを使う場合は以下の手順でインストールしてください。
+
+- ソースをダウンロードして解凍してください::
+
+    tar -xvzf Robot_operation_support-1.0.0.tar.gz
+
+- 解凍されたフォルダに入ってください::
+
+    cd Robot_operation_support-1.0.0
+
+- ``build`` フォルダを作ってください::
+
+    mkdir build
+
+- `` build`` フォルダに入ってください::
+
+    cd build
+
+- CMakeを実行してください::
+
+    cmake ../
+
+- エラーが出無い場合、makeを実行してください::
+
+    make
+
+- ``make install`` でコンポーネントをインストールしてください。選択された
+  インストール場所に書き込み権限があるかを確認してください::
+
+  ``make install``
+
+- インストールする場所はccmakeを実行して ``CMAKE_INSTALL_PREFIX`` を
+  設定することで変更が可能です。
+
+    ccmake ../
+
+ここまでで、コンポーネントが使えるようになりました。コンフィグレーションは次のセクションを
+参照してください。
+
+Robot_operation_supportは ``Robot_operation_supportComp`` を実行（ ``${prefix}/components/bin`` に
+インストールされます）することでスタンドアローンモードで実行することができます。
+あるいは、 ``libRobot_operation_support.so`` を初期化関数の ``Robot_operation_supportInit`` を利用して、
+マネージャにロードすることができます。このライブラリは ``${prefix}/components/lib`` 
+または ``${prefix}/components/lib64`` にインストールされます。
+
+
+コンフィグレーション
+====================
+
+使えるコンフィグレーションパラメータは以下のテーブルを参照
+してください。
+
+================ ================== ================ ====
+パラメータ       データ型           デフォルト値     意味
+================ ================== ================ ====
+cameraID         int                0                
+width            int                320              
+height           int                240              
+================ ================== ================ ====
+
+ポート
+======
+
+コンポーネントによって提供されるポートは以下のテーブルで述べられています。
+
+=============== =========== ============================== ====
+ポート名        ポート型    データ型                       意味
+=============== =========== ============================== ====
+Image           InPort      RTC::CameraImage               
+LRF             InPort      RTC::RangeData                 
+Gamepad         InPort      RTC::TimedVelocity2D           
+Latency         InPort      RTC::TimedDoubleSeq            
+Buttons         InPort      RTC::TimedDoubleSeq            
+SendData        OutPort     RTC::TimedDoubleSeq            
+=============== =========== ============================== ====
+
+例
+==
+
+例のrtc.confファイルは ``${prefix}/components/share/Robot_operation_support/examples/conf/``
+フォルダにインストールされています。
+
+Changelog
+=========
+
+
+License
+=======
+
+このソフトウェアは産業技術総合研究所で開発されています。承認番号はH23PRO-????
+です。このソフトウェアは Lesser General Public License (LGPL) ライセンスとして
+公開されてます。COPYING.LESSER を参照してください。
+

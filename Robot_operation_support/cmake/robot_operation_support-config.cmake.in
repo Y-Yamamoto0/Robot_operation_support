@@ -1,0 +1,54 @@
+# Robot_operation_support CMake config file
+#
+# This file sets the following variables:
+# Robot_operation_support_FOUND - Always TRUE.
+# Robot_operation_support_INCLUDE_DIRS - Directories containing the Robot_operation_support include files.
+# Robot_operation_support_IDL_DIRS - Directories containing the Robot_operation_support IDL files.
+# Robot_operation_support_LIBRARIES - Libraries needed to use Robot_operation_support.
+# Robot_operation_support_DEFINITIONS - Compiler flags for Robot_operation_support.
+# Robot_operation_support_VERSION - The version of Robot_operation_support found.
+# Robot_operation_support_VERSION_MAJOR - The major version of Robot_operation_support found.
+# Robot_operation_support_VERSION_MINOR - The minor version of Robot_operation_support found.
+# Robot_operation_support_VERSION_REVISION - The revision version of Robot_operation_support found.
+# Robot_operation_support_VERSION_CANDIDATE - The candidate version of Robot_operation_support found.
+
+message(STATUS "Found Robot_operation_support-@PROJECT_VERSION@")
+set(Robot_operation_support_FOUND TRUE)
+
+find_package(<dependency> REQUIRED)
+
+#set(Robot_operation_support_INCLUDE_DIRS
+#    "@CMAKE_INSTALL_PREFIX@/include/@PROJECT_NAME_LOWER@-@PROJECT_VERSION_MAJOR@"
+#    ${<dependency>_INCLUDE_DIRS}
+#    )
+#
+#set(Robot_operation_support_IDL_DIRS
+#    "@CMAKE_INSTALL_PREFIX@/include/@PROJECT_NAME_LOWER@-@PROJECT_VERSION_MAJOR@/idl")
+set(Robot_operation_support_INCLUDE_DIRS
+    "@CMAKE_INSTALL_PREFIX@/include/@CPACK_PACKAGE_FILE_NAME@"
+    ${<dependency>_INCLUDE_DIRS}
+    )
+set(Robot_operation_support_IDL_DIRS
+    "@CMAKE_INSTALL_PREFIX@/include/@CPACK_PACKAGE_FILE_NAME@/idl")
+
+
+if(WIN32)
+    set(Robot_operation_support_LIBRARIES
+        "@CMAKE_INSTALL_PREFIX@/@LIB_INSTALL_DIR@/@CMAKE_SHARED_LIBRARY_PREFIX@@PROJECT_NAME_LOWER@@CMAKE_STATIC_LIBRARY_SUFFIX@"
+        ${<dependency>_LIBRARIES}
+        )
+else(WIN32)
+    set(Robot_operation_support_LIBRARIES
+        "@CMAKE_INSTALL_PREFIX@/@LIB_INSTALL_DIR@/@CMAKE_SHARED_LIBRARY_PREFIX@@PROJECT_NAME_LOWER@@CMAKE_SHARED_LIBRARY_SUFFIX@"
+        ${<dependency>_LIBRARIES}
+        )
+endif(WIN32)
+
+set(Robot_operation_support_DEFINITIONS ${<dependency>_DEFINITIONS})
+
+set(Robot_operation_support_VERSION @PROJECT_VERSION@)
+set(Robot_operation_support_VERSION_MAJOR @PROJECT_VERSION_MAJOR@)
+set(Robot_operation_support_VERSION_MINOR @PROJECT_VERSION_MINOR@)
+set(Robot_operation_support_VERSION_REVISION @PROJECT_VERSION_REVISION@)
+set(Robot_operation_support_VERSION_CANDIDATE @PROJECT_VERSION_CANDIDATE@)
+
