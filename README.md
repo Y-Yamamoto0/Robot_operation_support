@@ -32,13 +32,13 @@
 - Dummy_LRF_PSDRTC：動作確認時にLRF・PSD距離データの一定値を送信するRTC．LRF距離データはRangeData型，PSD距離データはTimedLongSeq型で出力する．
 
 ### 既存のRTC
-- OpenCVCameraRTC：カメラ映像をRobot_operation_supportへ送るRTC．OpenRTMに入っているRTCを用いる。CameraImage型で出力する．
+- OpenCVCameraRTC：カメラ映像をRobot_operation_supportへ送るRTC．OpenRTMに入っているRTCを用いる．CameraImage型で出力する．
 #### 遠隔操作時
 - screen_captureRTC：Robot_operation_supportRTCによって表示されたカメラ映像をキャプチャするRTC．CameraImage型で出力する．
-- CameraClientRTC：カメラ映像をRSNP通信によってサーバに送信するRTC．CameraImage型を受信する。
+- CameraClientRTC：カメラ映像をRSNP通信によってサーバに送信するRTC．CameraImage型を受信する．
 - URGRTC：LRF距離データを取得するRTC．RangeData型で出力する．
 - UrgControllerRTC：LRF距離データを間引きするRTC．RangeData型で受信・出力を行う．
-- RobotClient_ver2RTC：ゲームパッドのジョイスティック入力量およびボタン入力を，RSNP通信によりサーバから取得するRTC．ジョイスティック入力量はTimedVelocity2D型で出力し、ボタン入力はTimedLongSeq型で出力する．
+- RobotClient_ver2RTC：ゲームパッドのジョイスティック入力量およびボタン入力を，RSNP通信によりサーバから取得するRTC．ジョイスティック入力量はTimedVelocity2D型で出力し，ボタン入力はTimedLongSeq型で出力する．
 - RTC_iWs09RTC：移動ロボットの動作とPSD距離データの取得を行うRTC．移動量はTimedVelocity2D型を受信し，PSD距離データはTimedLongSeq型で出力する．
 ****
 RTMコンテスト2021 
