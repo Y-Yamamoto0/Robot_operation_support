@@ -1,0 +1,54 @@
+# Dummy_LRF_PSD CMake config file
+#
+# This file sets the following variables:
+# Dummy_LRF_PSD_FOUND - Always TRUE.
+# Dummy_LRF_PSD_INCLUDE_DIRS - Directories containing the Dummy_LRF_PSD include files.
+# Dummy_LRF_PSD_IDL_DIRS - Directories containing the Dummy_LRF_PSD IDL files.
+# Dummy_LRF_PSD_LIBRARIES - Libraries needed to use Dummy_LRF_PSD.
+# Dummy_LRF_PSD_DEFINITIONS - Compiler flags for Dummy_LRF_PSD.
+# Dummy_LRF_PSD_VERSION - The version of Dummy_LRF_PSD found.
+# Dummy_LRF_PSD_VERSION_MAJOR - The major version of Dummy_LRF_PSD found.
+# Dummy_LRF_PSD_VERSION_MINOR - The minor version of Dummy_LRF_PSD found.
+# Dummy_LRF_PSD_VERSION_REVISION - The revision version of Dummy_LRF_PSD found.
+# Dummy_LRF_PSD_VERSION_CANDIDATE - The candidate version of Dummy_LRF_PSD found.
+
+message(STATUS "Found Dummy_LRF_PSD-@PROJECT_VERSION@")
+set(Dummy_LRF_PSD_FOUND TRUE)
+
+find_package(<dependency> REQUIRED)
+
+#set(Dummy_LRF_PSD_INCLUDE_DIRS
+#    "@CMAKE_INSTALL_PREFIX@/include/@PROJECT_NAME_LOWER@-@PROJECT_VERSION_MAJOR@"
+#    ${<dependency>_INCLUDE_DIRS}
+#    )
+#
+#set(Dummy_LRF_PSD_IDL_DIRS
+#    "@CMAKE_INSTALL_PREFIX@/include/@PROJECT_NAME_LOWER@-@PROJECT_VERSION_MAJOR@/idl")
+set(Dummy_LRF_PSD_INCLUDE_DIRS
+    "@CMAKE_INSTALL_PREFIX@/include/@CPACK_PACKAGE_FILE_NAME@"
+    ${<dependency>_INCLUDE_DIRS}
+    )
+set(Dummy_LRF_PSD_IDL_DIRS
+    "@CMAKE_INSTALL_PREFIX@/include/@CPACK_PACKAGE_FILE_NAME@/idl")
+
+
+if(WIN32)
+    set(Dummy_LRF_PSD_LIBRARIES
+        "@CMAKE_INSTALL_PREFIX@/@LIB_INSTALL_DIR@/@CMAKE_SHARED_LIBRARY_PREFIX@@PROJECT_NAME_LOWER@@CMAKE_STATIC_LIBRARY_SUFFIX@"
+        ${<dependency>_LIBRARIES}
+        )
+else(WIN32)
+    set(Dummy_LRF_PSD_LIBRARIES
+        "@CMAKE_INSTALL_PREFIX@/@LIB_INSTALL_DIR@/@CMAKE_SHARED_LIBRARY_PREFIX@@PROJECT_NAME_LOWER@@CMAKE_SHARED_LIBRARY_SUFFIX@"
+        ${<dependency>_LIBRARIES}
+        )
+endif(WIN32)
+
+set(Dummy_LRF_PSD_DEFINITIONS ${<dependency>_DEFINITIONS})
+
+set(Dummy_LRF_PSD_VERSION @PROJECT_VERSION@)
+set(Dummy_LRF_PSD_VERSION_MAJOR @PROJECT_VERSION_MAJOR@)
+set(Dummy_LRF_PSD_VERSION_MINOR @PROJECT_VERSION_MINOR@)
+set(Dummy_LRF_PSD_VERSION_REVISION @PROJECT_VERSION_REVISION@)
+set(Dummy_LRF_PSD_VERSION_CANDIDATE @PROJECT_VERSION_CANDIDATE@)
+
