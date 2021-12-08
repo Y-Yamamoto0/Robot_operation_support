@@ -42,4 +42,4 @@
 - RTC_iWs09RTC：移動ロボットの動作とPSD距離データの取得を行うRTC．移動量はTimedVelocity2D型を受信し，PSD距離データはTimedLongSeq型で出力する．
 
 ## マニュアル
-マニュアルは[こちら](https://github.com/Y-Yamamoto0/Robot_operation_support/blob/main/SI2021_%E3%83%9E%E3%83%8B%E3%83%A5%E3%82%A2%E3%83%AB.pdf)
+マニュアルは[こちら](https://github.com/Y-Yamamoto0/Robot_operation_support/blob/main/ver1.1_SI2021_manual.pdf)
