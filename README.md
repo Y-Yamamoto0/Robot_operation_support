@@ -40,5 +40,6 @@
 - UrgControllerRTC：LRF距離データを間引きするRTC．RangeData型で受信・出力を行う．
 - RobotClient_ver2RTC：ゲームパッドのジョイスティック入力量およびボタン入力を，RSNP通信によりサーバから取得するRTC．ジョイスティック入力量はTimedVelocity2D型で出力し，ボタン入力はTimedLongSeq型で出力する．
 - RTC_iWs09RTC：移動ロボットの動作とPSD距離データの取得を行うRTC．移動量はTimedVelocity2D型を受信し，PSD距離データはTimedLongSeq型で出力する．
-****
-RTMコンテスト2021 
+
+## マニュアル
+マニュアルは[こちら](https://github.com/Y-Yamamoto0/Robot_operation_support/blob/main/SI2021_%E3%83%9E%E3%83%8B%E3%83%A5%E3%82%A2%E3%83%AB.pdf)
